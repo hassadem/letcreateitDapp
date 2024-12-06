@@ -38,25 +38,11 @@ function TokenForm() {
     const provider = new ethers.BrowserProvider(window.ethereum);
     const signer = await provider.getSigner();
 
-    const contractAddress = "0x18936488A1d358a5C46dE8FF6Ef528Ce91346b6C"; // Example contract address
+    const contractAddress = "0x790C1355Ec4Dd07B5B5DF043B59B12DFeCe45313"; // Example contract address
+
     const abi = [
-      { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
-      { "anonymous": false, "inputs": [
-        { "indexed": true, "internalType": "address", "name": "tokenAddress", "type": "address" },
-        { "indexed": true, "internalType": "address", "name": "creator", "type": "address" },
-        { "indexed": false, "internalType": "string", "name": "name", "type": "string" },
-        { "indexed": false, "internalType": "string", "name": "symbol", "type": "string" }
-      ], "name": "TokenCreated", "type": "event" },
-      { "inputs": [
-        { "internalType": "string", "name": "name", "type": "string" },
-        { "internalType": "string", "name": "symbol", "type": "string" },
-        { "internalType": "uint8", "name": "decimals", "type": "uint8" },
-        { "internalType": "uint256", "name": "totalSupply", "type": "uint256" }
-      ], "name": "createMemeToken", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "payable", "type": "function" },
-      { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" },
-      { "inputs": [{ "internalType": "uint256", "name": "newFee", "type": "uint256" }], "name": "updateServiceFee", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
-      { "inputs": [], "name": "withdrawFunds", "outputs": [], "stateMutability": "nonpayable", "type": "function" }
-    ];
+{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"tokenAddress","type":"address"},{"indexed":true,"internalType":"address","name":"creator","type":"address"},{"indexed":false,"internalType":"string","name":"name","type":"string"},{"indexed":false,"internalType":"string","name":"symbol","type":"string"}],"name":"TokenCreated","type":"event"},{"inputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"},{"internalType":"uint8","name":"decimals","type":"uint8"},{"internalType":"uint256","name":"totalSupply","type":"uint256"}],"name":"createMemeToken","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"newFee","type":"uint256"}],"name":"updateServiceFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawFunds","outputs":[],"stateMutability":"nonpayable","type":"function"}
+];
 
     const contract = new Contract(contractAddress, abi, signer);
 
